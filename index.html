@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Joyeux Anniversaire Mariam 🎂</title>
   <style>
@@ -40,8 +41,9 @@
     .photo {
       display: block;
       margin: 20px auto;
-      width: 200px;
-      height: 200px;
+      width:100%;
+      max-width: 200px;
+      height: auto;
       object-fit: cover;
       border-radius: 50%;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -143,6 +145,15 @@
       from, to { border-color: transparent }
       50% { border-color: #f57c00 }
     }
+    @media (max-width: 600px) {
+  .title {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -257,4 +268,5 @@
 </script>
 </body>
 </html>
+
 
