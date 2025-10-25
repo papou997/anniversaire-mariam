@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Joyeux Anniversaire Mariam 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: slideUp 1.5s ease-out;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2.5em;
+      color: #f57c00;
+      animation: pulse 2s infinite;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .photo {
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .card, .quiz, .footer {
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .card {
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .message {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .quiz h2 {
+      color: #d84315;
+      margin-bottom: 10px;
+    }
+
+    .quiz label {
+      display: block;
+      margin: 10px 0;
+      background: #ffe0b2;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .quiz label:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #6d4c41;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Confettis */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #f57c00;
+      animation: fall 3s linear infinite;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Texte animé */
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid #f57c00;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .05em;
+      animation: typing 4s steps(60, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #f57c00 }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🎁 Page d’accueil -->
+<div id="intro" style="text-align:center; margin-top:100px;">
+  <h1 class="title">👀 Une surprise t’attend...</h1>
+  <button onclick="lancerSurprise()" style="padding:15px 30px; font-size:1.2em; background:#f57c00; color:white; border:none; border-radius:10px; cursor:pointer;">
+    🎉 Découvrir la surprise
+  </button>
+</div>
+
+<!-- 🎈 Contenu principal -->
+<div class="container" id="main" style="display:none;">
+  <h1 class="title">🎉 Joyeux Anniversaire Diallo Mariam ! 🎉</h1>
+  <p class="subtitle typewriter">Oui... c'était hier 😅 mais mieux vaut tard que jamais !</p>
+
+  <img src="mariam.png" alt="Photo de Mariam" class="photo">
+
+  <div class="card">
+    <p class="message">
+      C’est vrai que je n’ai pas grand-chose à te donner… mais j’ai mis tout mon cœur dans ce petit geste 💌.<br><br>
+      Tu es une personne forte, brillante et pleine de lumière. Continue de croire en toi, de rêver grand, et de sourire comme tu sais si bien le faire ✨.<br><br>
+      Que cette nouvelle année t’apporte autant de bonheur que tu en donnes autour de toi. Tu es une étoile qui mérite de briller chaque jour 🌟.
+    </p>
+  </div>
+
+  <div class="quiz">
+    <h2>🌟 Petit quiz pour toi 🌟</h2>
+    <form id="quizForm">
+      <label><input type="radio" name="gateau" value="choco"> Gâteau au chocolat 🍫</label>
+      <label><input type="radio" name="gateau" value="fraise"> Gâteau à la fraise 🍓</label>
+      <label><input type="radio" name="gateau" value="vanille"> Gâteau à la vanille 🍰</label>
+      <label><input type="radio" name="gateau" value="autre"> Autre chose ? 😋</label>
+      <br>
+      <button type="submit">Répondre</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p>Avec tout mon cœur,</p>
+    <p><strong>Moussa 💙</strong></p>
+  </div>
+</div>
+
+<!-- 🎵 Musique -->
+<audio id="musique" loop>
+  <source src="anniversaire.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function lancerSurprise() {
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+
+    setTimeout(() => {
+      const audio = document.getElementById('musique');
+      audio.play().catch(() => {
+        console.log("Lecture automatique bloquée par le navigateur.");
+      });
+    }, 2000);
+  }
+
+  const form = document.getElementById('quizForm');
+  const main = document.getElementById('main');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    main.innerHTML = `
+      <h1 class="title">🎊 Encore Joyeux Anniversaire Mariam ! 🎊</h1>
+      <p class="subtitle typewriter">Merci d’avoir répondu 💌</p>
+      <div class="card">
+        <p class="message">
+          C’est vrai que je n’ai pas grand-chose à t’offrir… mais je voulais te rappeler à quel point tu es précieuse 💖.<br><br>
+          Tu es une source d’inspiration, de douceur et de force. Ne doute jamais de ta valeur. Continue d’avancer, de créer, de rêver — le monde a besoin de ton éclat 🌍✨.
+        </p>
+      </div>
+      <div class="footer">
+        <p>Avec tout mon cœur,</p>
+        <p><strong>Moussa 💙</strong></p>
+      </div>
+    `;
+    lancerConfettis();
+  });
+
+  function lancerConfettis() {
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+      confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      document.body.appendChild(confetti);
+      setTimeout(() => {
+        confetti.remove();
+      }, 4000); // Supprime chaque confetti après 4 secondes
+    }
+}
+</script>
+</body>
+</html>
